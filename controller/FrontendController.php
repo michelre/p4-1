@@ -6,6 +6,7 @@ require_once 'dao/CommentDao.php';
 class FrontendController
 {
 	private $postDao;
+    private $commentDao;
 
 	public function __construct(){
 		$this->postDao = new PostDao();

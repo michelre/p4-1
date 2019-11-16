@@ -11,6 +11,10 @@ if(!isset($_GET['action'])){
 
 if($_GET['action'] == 'post_detail'){
     $frontendController->postDetail();
-    isset($_GET['id']);
+    $post = getPost($_GET['id']);
+
+
+
+    
     die();
 }

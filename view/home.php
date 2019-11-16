@@ -5,9 +5,9 @@
     <title>Billet simple pour l'Alaska</title>
 </head>
 <body>
-	<header>Billet simple pour l'Alaska</header>
+	<?php require('header.php'); ?>
 
-    <h1>Accueil</h1>
+	<h1>Accueil</h1>
     <p>	Bonjour tout le monde !
 		Bienvenue ! Je suis Jean Forteroche, écrivain. Vous êtes actuellement sur mon Blog où je poste au fur et à mesure un nouveau chapitre de mon dernier roman intitulé "Billet simple pour l'Alaska". N'hésitez pas à y laisser des commentaires !
 	</p>
@@ -20,13 +20,8 @@
 		<?php
 	}
 	?>
+	        
+	<?php require('footer.php'); ?>
 
-	<footer>
-		<p>2019 Jean Forteroche - 
-			<a href="index.php?action=ml">Mentions légales </a> 
-			- 
-			<a href="index.php?action=login">Espace Administrateur</a>
-		</p>
-	</footer>
 </body>
 </html>
