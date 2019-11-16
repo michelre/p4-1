@@ -20,7 +20,7 @@ class FrontendController
     public function postDetail()
     {
         $posts = $this->postDao->findall();
-        
+        $comments = $this->commentDao->findall();
         include_once 'view/post-detail.php';
     }
 

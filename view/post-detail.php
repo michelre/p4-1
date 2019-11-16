@@ -12,11 +12,14 @@
 foreach($posts as $post){
 	?>
 	<div><?php echo $post->getTitle();?></div> 
-	<div><?php echo $post->getContent();?></div>
-	
+	<div><?php echo $post->getContent();?></div>	
+}	
 	<?php
+foreach($comments as $comment){
+	?>
+	<div><?php echo $comment->getComment();?></div>
 }
-?>
+
 
 </body>
 </html>
