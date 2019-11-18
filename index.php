@@ -11,10 +11,10 @@ if(!isset($_GET['action'])){
 
 if($_GET['action'] == 'post_detail'){
     $frontendController->postDetail();
-    $post = getPost($_GET['id']);
+    $post -> getPost($_GET['id']);
 
-
-
+/*if($_GET['action'] == 'login'){
+    $frontendController->login();*/
     
     die();
 }

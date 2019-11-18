@@ -10,6 +10,7 @@ class FrontendController
 
 	public function __construct(){
 		$this->postDao = new PostDao();
+        $this->commentDao = new CommentDao();
 	}
 
     public function home()
@@ -25,5 +26,9 @@ class FrontendController
         include_once 'view/post-detail.php';
     }
 
-
+    public function login()
+        {
+        
+        include_once 'view/login.php';
+        }
 }

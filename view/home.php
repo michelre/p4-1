@@ -15,7 +15,7 @@
 	<?php
 	foreach($posts as $post){
 		?>
-		<div><a href="?action=post_detail&post_id=1"><?php echo $post->getTitle();?></a></div> 
+		<div><a href="post_detail.php?post_id=$_GET['id']"><?php echo $post->getTitle();?></a></div> 
 		<div><?php echo $post->getContent();?></div>
 		<?php
 	}
