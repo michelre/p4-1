@@ -7,6 +7,7 @@ class Comment
     private $autor;
     private $comment;
     private $date;
+    private $signaler;
 
     /**
      * @return mixed
@@ -70,5 +71,21 @@ class Comment
     public function setDate($date)
     {
         $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSignaler()
+    {
+        return $this->signaler;
+    }
+
+    /**
+     * @param mixed $signaler
+     */
+    public function setSignaler($signaler)
+    {
+        $this->signaler = $signaler;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 class BaseDao {
-	
+
 	protected $bd;
 
 	 public function __construct()
@@ -15,6 +15,6 @@ class BaseDao {
 			        die('Erreur : '.$e->getMessage());
 			}
 		}
-		
+
 }
 

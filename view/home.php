@@ -15,12 +15,12 @@
 	<?php
 	foreach($posts as $post){
 		?>
-		<div><a href="post_detail.php?post_id=$_GET['id']"><?php echo $post->getTitle();?></a></div> 
+		<div><a href="?action=post_detail&post_id=<?php echo $post->getId(); ?>"><?php echo $post->getTitle();?></a></div>
 		<div><?php echo $post->getContent();?></div>
 		<?php
 	}
 	?>
-	        
+
 	<?php require('footer.php'); ?>
 
 </body>

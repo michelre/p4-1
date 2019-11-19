@@ -19,16 +19,22 @@ class FrontendController
         include_once 'view/home.php';
     }
 
-    public function postDetail()
+    public function postDetail($id)
     {
-        $posts = $this->postDao->findall();
+        $post = $this->postDao->findById($id);
         $comments = $this->commentDao->findall();
         include_once 'view/post-detail.php';
     }
 
     public function login()
         {
-        
+
         include_once 'view/login.php';
         }
+
+    public function signalerCommentaire($commentId, $postId)
+    {
+        $this->commentDao->signaler($commentId);
+        header('Location: ?action=post_detail&post_id=' . $postId);
+    }
 }
