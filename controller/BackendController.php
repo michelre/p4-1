@@ -35,9 +35,21 @@ class BackendController
         include_once 'view/admin/create-post.php';
     }
 
+    public function createPostAction($title, $content)
+    {
+        $post = $this->postDao->create($title, $content);
+        include_once 'view/admin/create-post.php';
+    }
+
     public function deletePost($id)
     {
         $post = $this->postDao->findById($id);
+        include_once 'view/admin/delete-post.php';
+    }
+
+       public function deletePostAction($id)
+    {
+        $post = $this->postDao->delete($id);
         include_once 'view/admin/delete-post.php';
     }
 

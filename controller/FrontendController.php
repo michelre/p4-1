@@ -19,10 +19,10 @@ class FrontendController
         include_once 'view/home.php';
     }
 
-    public function postDetail($id)
+    public function postDetail($id, $postId)
     {
         $post = $this->postDao->findById($id);
-        $comments = $this->commentDao->findall();
+        $comment = $this->commentDao->findAllByPost($postId);
         include_once 'view/post-detail.php';
     }
 

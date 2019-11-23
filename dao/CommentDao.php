@@ -6,21 +6,31 @@ require_once 'model/Comment.php';
 class CommentDao extends BaseDao
 {
 
-    public function findall()
+   	public function findAllByPost($postId)
     {
-        $req = $this->bd->query('SELECT * FROM comments');
+        $req = $this->bd->prepare('SELECT, DATE_FORMAT(date_comment, \'%d/%m/%y\') AS comment_date * FROM comments WHERE post_id=?');
+        $req->execute(array($postId));
         $comments = [];
-        while ($donnees = $req->fetch()) {
-            $comment = new Comment();
-            $comment->setId($donnees['id']);
-            $comment->setAutor($donnees['auteur']);
-            $comment->setComment($donnees['commentaires']);
-            $comment->setDate($donnees['date_commentaire']);
-            $comment->setSignaler($donnees['signaler']);
-            $comments[] = $comment;
+        while ($comment = $req->fetch()) {
+            array_push($comments, new Comment($comment['id'], $comment['post_id'], $comment['author'], $comment['comment'], $comment['comment_date']));
         }
         return $comments;
     }
+
+	/*public function findAllByPost($postId)
+    {
+        $statement = $this->bd->prepare('SELECT * FROM comments WHERE post_id = :id_billet');
+        $statement->bindParam(':id_billet', $postId);
+        $statement->execute();
+
+        $donnees = $statement->fetch(PDO::FETCH_ASSOC);
+        $comment = new Comment();
+        $comment->setPostId($donnees['id_billet']);
+        $comment->setAutor($donnees['auteur']);
+        $comment->setComment($donnees['commentaires']);
+
+        return $comment;
+    }*/
 
     public function signaler($commentId)
     {
