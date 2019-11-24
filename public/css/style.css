@@ -1,0 +1,116 @@
+body{
+    padding-top: 70px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1{
+    padding:30px;
+}
+
+h2{
+    padding:20px;
+}
+
+.navbar{
+    position: fixed; 
+    top:0;
+    right: 0;
+    left:0;
+    z-index: 1030;
+    background-color: #ffffff;
+    border-bottom: 1px solid #3399ff;
+    align-content: center;
+    justify-content: center;
+    font-size: 2em;
+    font-family: monospace;
+}
+
+#navbar-title{
+    text-align: center;
+    font-size: 2em;
+    font-family: monospace;
+}
+
+/* Emplacement description carousel */
+.carousel-caption {
+    top: 40%;
+}
+
+/* Style du titre d'une slide */
+.style_title {
+    font-size: 2.5em;
+    
+}
+
+/* Style du texte d'une slide */
+.style_texte {
+    font-size: 1.2em;
+    
+}
+
+.titre-posts{
+    font-weight: bold;
+    padding: 10px;
+}
+
+.extrait-posts{
+    text-align:justify; 
+}
+
+.post{
+    text-align: justify;
+}
+
+.form-control {
+    margin-bottom: 15px;
+
+}
+
+
+.titre-bio{
+    font-weight: bold;
+    font-size: 2em;
+    padding: 10px;
+
+}
+
+.portrait{
+    width: 100%;
+}
+
+.biographie{
+    background-color: #EFEFEF;
+    overflow: hidden;
+}
+
+footer {
+    height: 50px;
+    border-top: 1px solid #3399ff;
+    text-align: center; 
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

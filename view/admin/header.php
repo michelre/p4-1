@@ -5,7 +5,7 @@
 
 
 	<nav>
-        <a href="#">Se déconnecter</a>
+        <a class="btn btn-primary" href="#">Se déconnecter</a>
     </nav>
 
 

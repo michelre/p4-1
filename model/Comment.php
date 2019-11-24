@@ -4,10 +4,31 @@
 class Comment
 {
 	private $id;
-    private $autor;
-    private $comment;
-    private $date;
+    private $id_billet;
+    private $auteur;
+    private $commentaires;
+    private $date_commentaire;
     private $signaler;
+
+    /**
+     * Comment constructor.
+     * @param $id
+     * @param $id_billet
+     * @param $auteur
+     * @param $commentaires
+     * @param $date_commentaire
+     * @param $signaler
+     */
+    public function __construct($id, $id_billet, $auteur, $commentaires, $date_commentaire, $signaler)
+    {
+        $this->id = $id;
+        $this->id_billet = $id_billet;
+        $this->auteur = $auteur;
+        $this->commentaires = $commentaires;
+        $this->date_commentaire = $date_commentaire;
+        $this->signaler = $signaler;
+    }
+
 
     /**
      * @return mixed
@@ -28,49 +49,65 @@ class Comment
     /**
      * @return mixed
      */
-    public function getAutor()
+    public function getIdBillet()
     {
-        return $this->autor;
+        return $this->id_billet;
     }
 
     /**
-     * @param mixed $title
+     * @param mixed $id_billet
      */
-    public function setAutor($autor)
+    public function setIdBillet($id_billet)
     {
-        $this->autor = $autor;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getComment()
-    {
-        return $this->comment;
-    }
-
-    /**
-     * @param mixed $content
-     */
-    public function setComment($comment)
-    {
-        $this->comment = $comment;
+        $this->id_billet = $id_billet;
     }
 
     /**
      * @return mixed
      */
-    public function getDate()
+    public function getAuteur()
     {
-        return $this->date;
+        return $this->auteur;
     }
 
     /**
-     * @param mixed $content
+     * @param mixed $auteur
      */
-    public function setDate($date)
+    public function setAuteur($auteur)
     {
-        $this->date = $date;
+        $this->auteur = $auteur;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
+    }
+
+    /**
+     * @param mixed $commentaires
+     */
+    public function setCommentaires($commentaires)
+    {
+        $this->commentaires = $commentaires;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateCommentaire()
+    {
+        return $this->date_commentaire;
+    }
+
+    /**
+     * @param mixed $date_commentaire
+     */
+    public function setDateCommentaire($date_commentaire)
+    {
+        $this->date_commentaire = $date_commentaire;
     }
 
     /**
@@ -88,4 +125,6 @@ class Comment
     {
         $this->signaler = $signaler;
     }
+
+
 }

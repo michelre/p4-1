@@ -2,33 +2,34 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <title>Admin</title>
 </head>
 <body>
-<?php require('header.php'); ?>
+    <div class="container">
+        <?php require('header.php'); ?>
 
- <h1>Gérer les commentaires de l'article</h1>
+         <h1>Gérer les commentaires signalés de l'article</h1>
 
-<ul>
-            <?php foreach($comments as $comment){  ?>
+        <ul>
+                    <?php foreach($comments as $comment){  ?>
 
-            <li>
-                <?php echo $comment->getComment();?>
-                <a href="?action=createComment&commentId=<?php echo $comment->getId();?>&postId=<?php ;?>" class="btn btn-primary">Ecrire un commentaire</a>
+                    <li>
+                        <?php echo $comment->getCommentaires();?>
+                        <a href="?action=validate_comment_action&comment_id=<?php echo $comment->getId();?>" class="btn btn-primary">Reverser le commentaire</a>
+                        <a href="?action=remove_comment_action&comment_id=<?php echo $comment->getId();?>" class="btn btn-danger">Supprimer le commentaire</a>
+                    </li>
 
-                <a href="?action=updateComment&commentId=<?php echo $comment->getId();?>&postId=<?php ;?>" class="btn btn-primary">Modifier le commentaire</a>
+                    <?php
+        }
+                    ?>
+                </ul>
+            </div>
 
-                <a href="?action=removeComment&commentId=<?php echo $comment->getId();?>&postId=<?php ;?>" class="btn btn-danger">Supprimer le commentaire</a>
-            </li>
-
-            <?php  
-}
-            ?>
-        </ul>
+        </form>
     </div>
-
-</form>
-
 
 </body>
 </html>

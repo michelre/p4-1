@@ -36,24 +36,26 @@ class PostDao extends BaseDao
 
     public function update($title, $content, $id)
     {
-		$statement=$this->bd->prepare("UPDATE posts SET titre=?,contenu=? WHERE id=? ");
-        $statement->bindParam(':titre',$title,$content,$id);
-		$statement->execute();
+        $statement = $this->bd->prepare("UPDATE posts SET titre=:titre,contenu=:contenu WHERE id=:id ");
+        $statement->bindParam(':titre', $title);
+        $statement->bindParam(':contenu', $content);
+        $statement->bindParam(':id', $id);
+        $statement->execute();
     }
 
     public function create($title, $content)
     {
-		$statement=$this->bd->prepare("INSERT INTO posts(titre,contenu) VALUES(?,?,NOW()) ");
-		$statement->bindParam(':titre',$title);
-        $statement->bindParam(':contenu',$content);
-		$statement->execute();
-	    }
+        $statement = $this->bd->prepare("INSERT INTO posts(titre,contenu, date_creation) VALUES(:titre, :contenu, NOW()) ");
+        $statement->bindParam(':titre', $title);
+        $statement->bindParam(':contenu', $content);
+        $statement->execute();
+    }
 
     public function delete($id)
     {
-		$statement=$this->bd->prepare("DELETE FROM posts WHERE id=? ");
-        $statement->bindParam(':id',$id);
-		$statement->execute();
+        $statement = $this->bd->prepare("DELETE FROM posts WHERE id=:id");
+        $statement->bindParam(':id', $id);
+        $statement->execute();
     }
 
 }
