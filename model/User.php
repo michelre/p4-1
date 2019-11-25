@@ -6,7 +6,7 @@ class User
 	private $id;
     private $login;
     private $password;
-   
+
     /**
      * @return mixed
      */
@@ -34,7 +34,7 @@ class User
     /**
      * @param mixed $login
      */
-    public function setLogin($id)
+    public function setLogin($login)
     {
         $this->login = $login;
     }
@@ -50,7 +50,7 @@ class User
     /**
      * @param mixed $password
      */
-    public function setPassword($id)
+    public function setPassword($password)
     {
         $this->password = $password;
     }

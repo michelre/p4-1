@@ -88,5 +88,11 @@ class BackendController
         header('Location: ?action=manage_comments&post_id=' . $comment->getIdBillet());
     }
 
+    public function logout()
+    {
+        setcookie('p4_authentification', 'p4_authentification', time() - 1);
+        header('Location: ?action=login');
+    }
+
 
 }

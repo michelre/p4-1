@@ -5,7 +5,9 @@
 
 
 	<nav>
-        <a class="btn btn-primary" href="#">Se déconnecter</a>
+        <a class="btn btn-primary" href="?action=logout">Se déconnecter</a>
+        <a class="btn btn-primary" href="?action=accueil">Accueil</a>
+        <a class="btn btn-primary" href="?action=admin">Admin</a>
     </nav>
 
 

@@ -37,21 +37,24 @@ h2{
     font-family: monospace;
 }
 
-/* Emplacement description carousel */
+.carousel-inner {
+    position: relative;
+    text-align: center;
+}
+
 .carousel-caption {
-    top: 40%;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 }
 
-/* Style du titre d'une slide */
 .style_title {
-    font-size: 2.5em;
-    
+    font-size: 2.5em;    
 }
 
-/* Style du texte d'une slide */
 .style_texte {
-    font-size: 1.2em;
-    
+    font-size: 1.2em;    
 }
 
 .titre-posts{
@@ -87,6 +90,8 @@ h2{
 .biographie{
     background-color: #EFEFEF;
     overflow: hidden;
+    padding: 10px;
+    text-align: justify;
 }
 
 footer {
@@ -97,13 +102,28 @@ footer {
 
 
 
+@media screen and (min-width: 200px) and (max-width: 992px) {
+ .style_texte {
+    display: none;    
+    }
+}
 
+@media (max-width: 768px) {
+  .style_title {
+    font-size: 1.5em;
+     position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);    
+}
+}
 
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     width: 970px;
@@ -113,4 +133,5 @@ footer {
   .container {
     width: 1170px;
   }
+
 }
