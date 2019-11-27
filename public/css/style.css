@@ -31,10 +31,14 @@ h2{
     font-family: monospace;
 }
 
-#navbar-title{
+
+
+.title{
     text-align: center;
-    font-size: 2em;
-    font-family: monospace;
+}
+
+.dropdown{
+   text-align: center;
 }
 
 .carousel-inner {
@@ -106,6 +110,9 @@ footer {
  .style_texte {
     display: none;    
     }
+      .title{
+      font-size: 0.5em;
+}
 }
 
 @media (max-width: 768px) {
@@ -116,6 +123,7 @@ footer {
       left: 50%;
       transform: translate(-50%, -50%);    
 }
+
 }
 
 @media (min-width: 768px) {

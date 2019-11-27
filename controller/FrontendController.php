@@ -26,6 +26,7 @@ class FrontendController
     {
         $post = $this->postDao->findById($id);
         $comments = $this->commentDao->findAllByPost($id);
+        $posts = $this->postDao->findById($id);
         include_once 'view/post-detail.php';
     }
 
