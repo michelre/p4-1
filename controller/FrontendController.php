@@ -6,34 +6,37 @@ require_once 'dao/UserDao.php';
 
 class FrontendController
 {
-	private $postDao;
+    private $postDao;
     private $commentDao;
     private $userDao;
 
-	public function __construct(){
-		$this->postDao = new PostDao();
+    public function __construct()
+    {
+        $this->postDao = new PostDao();
         $this->commentDao = new CommentDao();
         $this->userDao = new UserDao();
-	}
+    }
 
     public function home()
     {
         $posts = $this->postDao->findall();
+        $postsMenu = $posts;
         include_once 'view/home.php';
     }
 
     public function postDetail($id)
     {
+        $postsMenu = $this->postDao->findall();
         $post = $this->postDao->findById($id);
         $comments = $this->commentDao->findAllByPost($id);
-        $posts = $this->postDao->findById($id);
         include_once 'view/post-detail.php';
     }
 
     public function login()
-        {
+    {
+        $postsMenu = $this->postDao->findall();
         include_once 'view/login.php';
-        }
+    }
 
     public function signalerCommentaire($commentId, $postId)
     {
@@ -51,11 +54,11 @@ class FrontendController
     {
         $user = $this->userDao->findByLogin($login);
         $userId = $user->getId();
-        if(!isset($userId)){
+        if (!isset($userId)) {
             header('Location: ?action=login&err=login_error');
             die();
         }
-        if(!password_verify($password, $user->getPassword())){
+        if (!password_verify($password, $user->getPassword())) {
             header('Location: ?action=login&err=password_error');
             die();
         }

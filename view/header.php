@@ -12,34 +12,34 @@
     <title>Billet simple pour l'Alaska</title>
 </head>
 <body>
-	
 
-	<header>
-		<div class="row">
-			<nav class="navbar">			
-					<div class="title col-lg-6">
-						<a href="index.php?action=accueil">Billet simple pour l'Alaska</a>
-					</div>	
-					<div class="dropdown col-lg-6 col-xs-1">
-				  		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-				    		Menu
-				  		</button>
-						<?php
-						foreach($posts as $post){
-						?>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						    	<a class="dropdown-item" href="index.php?action=accueil">Accueil</a>
-						    	<a class="dropdown-item" href="index.php?action=post_detail&post_id=<?php echo $post->getId(); ?>"><?php echo $post->getTitle();?></a>		
-						    	<a class="dropdown-item" href="index.php?action=post_detail&post_id=<?php echo $post->getId(); ?>"><?php echo $post->getTitle();?></a>	
-						    	<a class="dropdown-item" href="index.php?action=post_detail&post_id=<?php echo $post->getId(); ?>"><?php echo $post->getTitle();?></a>				
-						<?php
-						}
-						?>
-	  				</div>			
-			</nav>
-		</div>
-	</header>
-  
+
+<header>
+    <div class="row">
+        <nav class="navbar">
+            <div class="title col-lg-6">
+                <a href="index.php?action=accueil">Billet simple pour l'Alaska</a>
+            </div>
+            <div class="dropdown col-lg-6 col-xs-1">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Menu
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="index.php?action=accueil">Accueil</a>
+                    <?php
+                    foreach ($postsMenu as $postMenu) {
+                        ?>
+                        <a class="dropdown-item"
+                           href="index.php?action=post_detail&post_id=<?php echo $postMenu->getId(); ?>"><?php echo $postMenu->getTitle(); ?></a>
+                        <?php
+                    }
+                    ?>
+                </div>
+
+        </nav>
+    </div>
+</header>
+
 
 </body>
 </html>
