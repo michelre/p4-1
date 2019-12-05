@@ -17,7 +17,7 @@
 		<?php
 		?>
 		<div class="post"><?php echo $post->getContent(); ?></div>
-	
+
 
 		<h2>Laisser un commentaire</h2>
 
@@ -40,8 +40,9 @@
 		foreach ($comments as $comment) {
 		    ?>
 		    <div>
-		        <?php echo $comment->getAuteur(); ?>:
-		        <p><?php echo $comment->getCommentaires(); ?>
+		        <?php echo htmlspecialchars($comment->getAuteur()); ?>:
+		        <p>
+                    <?php echo htmlspecialchars($comment->getCommentaires()); ?>
 		        <?php if ($comment->getSignaler() === "0") { ?>
 		            <a href="?action=signaler_commentaire&comment_id=<?= $comment->getId() ?>&post_id=<?= $post->getId() ?>">Signaler</a>
 		        <?php } else { ?>
